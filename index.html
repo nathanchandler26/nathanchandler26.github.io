@@ -26,34 +26,51 @@
         <li><a href="projects.html#proj1">Sales Dashboard in Power BI</a></li>
         <li><a href="projects.html#proj2">Web Scraping with Python</a></li>
       </ul>
+    </section>
 
     <section class="timeline">
       <h3>Work History</h3>
       <div class="timeline-container">
-        <div class="timeline-item">
+        <div class="timeline-item hidden">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h4>Data Analyst – XYZ Corp</h4>
             <span class="timeline-date">2022 – Present</span>
-            <p>Worked on data visualization and reporting using Power BI and Python.</p>
+            <p>Created dashboards in Power BI, led A/B testing initiatives, automated reporting pipelines.</p>
           </div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-item hidden">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h4>Data Intern – ABC Inc</h4>
             <span class="timeline-date">2021 – 2022</span>
-            <p>Assisted with cleaning and preparing datasets for analysis.</p>
+            <p>Cleaned datasets, built Excel reports, supported machine learning experiments.</p>
           </div>
         </div>
         <!-- Add more items as needed -->
       </div>
     </section>
 
-    </section>
+    
   </main>
   <footer>
     <p>&copy; 2025 Nathan Chandler</p>
   </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      observer.observe(item);
+    });
+  </script>
+
 </body>
 </html>
