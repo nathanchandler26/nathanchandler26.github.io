@@ -32,7 +32,8 @@ body {
   }
   
 
-  
+
+/* Timeline Styles */
 .timeline {
   position: relative;
   padding: 2rem 1rem;
@@ -57,20 +58,12 @@ body {
 .timeline-item {
   position: relative;
   margin-bottom: 3rem;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease-out;
-}
-
-.timeline-item.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .timeline-dot {
   position: absolute;
   left: -30px;
-  top: 0;
+  top: 6px;
   width: 16px;
   height: 16px;
   background: #007acc;
@@ -79,11 +72,10 @@ body {
   box-shadow: 0 0 0 3px #007acc33;
 }
 
-.timeline-content {
-  background: white;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+.timeline-content h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .timeline-date {
@@ -91,4 +83,15 @@ body {
   color: #666;
   margin-bottom: 0.5rem;
   display: block;
+}
+
+.timeline-details {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.timeline-details.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
