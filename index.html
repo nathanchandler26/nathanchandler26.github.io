@@ -15,11 +15,13 @@
       <a href="projects.html">Projects</a>
     </nav>
   </header>
+
   <main>
     <section>
       <h2>Welcome!</h2>
       <p>I’m a data analyst/data scientist passionate about turning data into insights.</p>
     </section>
+
     <section>
       <h3>Featured Projects</h3>
       <ul>
@@ -31,92 +33,55 @@
     <section class="timeline">
       <h3>Work History</h3>
       <div class="timeline-container">
-        <div class="timeline-item hidden">
+
+        <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h4>Data Analyst – XYZ Corp</h4>
-            <span class="timeline-date">2022 – Present</span>
+          <button class="timeline-header">
+            <div>
+              <h4>Data Analyst – XYZ Corp</h4>
+              <span class="timeline-date">2022 – Present</span>
+            </div>
+            <span class="toggle-indicator">+</span>
+          </button>
+          <div class="timeline-details">
             <p>Created dashboards in Power BI, led A/B testing initiatives, automated reporting pipelines.</p>
           </div>
         </div>
-        <div class="timeline-item hidden">
+
+        <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h4>Data Intern – ABC Inc</h4>
-            <span class="timeline-date">2021 – 2022</span>
+          <button class="timeline-header">
+            <div>
+              <h4>Data Intern – ABC Inc</h4>
+              <span class="timeline-date">2021 – 2022</span>
+            </div>
+            <span class="toggle-indicator">+</span>
+          </button>
+          <div class="timeline-details">
             <p>Cleaned datasets, built Excel reports, supported machine learning experiments.</p>
           </div>
         </div>
 
-        <div class="timeline-item hidden">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h4>Data Intern – ABC Inc</h4>
-            <span class="timeline-date">2021 – 2022</span>
-            <p>Cleaned datasets, built Excel reports, supported machine learning experiments.</p>
-          </div>
-        </div>
+        <!-- Add more timeline items as needed -->
 
-        <div class="timeline-item hidden">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h4>Data Intern – ABC Inc</h4>
-            <span class="timeline-date">2021 – 2022</span>
-            <p>Cleaned datasets, built Excel reports, supported machine learning experiments.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item hidden">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h4>Data Intern – ABC Inc</h4>
-            <span class="timeline-date">2021 – 2022</span>
-            <p>Cleaned datasets, built Excel reports, supported machine learning experiments.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item hidden">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h4>Data Intern – ABC Inc</h4>
-            <span class="timeline-date">2021 – 2022</span>
-            <p>Cleaned datasets, built Excel reports, supported machine learning experiments.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item hidden">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h4>Data Intern – ABC Inc</h4>
-            <span class="timeline-date">2021 – 2022</span>
-            <p>Cleaned datasets, built Excel reports, supported machine learning experiments.</p>
-          </div>
-        </div>
-
-        <!-- Add more items as needed -->
       </div>
     </section>
-
-    
   </main>
+
   <footer>
     <p>&copy; 2025 Nathan Chandler</p>
   </footer>
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
 
-    document.querySelectorAll('.timeline-item').forEach(item => {
-      observer.observe(item);
+  <script>
+    document.querySelectorAll('.timeline-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const details = header.nextElementSibling;
+        const indicator = header.querySelector('.toggle-indicator');
+
+        details.classList.toggle('open');
+        indicator.textContent = details.classList.contains('open') ? '−' : '+';
+      });
     });
   </script>
-
 </body>
 </html>
